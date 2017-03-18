@@ -1,6 +1,6 @@
 ﻿using System;
 using Blue_Ribbon.DAL;
-using System.ComponentModel.DataAnnotations;            
+using System.ComponentModel.DataAnnotations;
 
 namespace Blue_Ribbon.Models
 {
@@ -16,6 +16,8 @@ namespace Blue_Ribbon.Models
         /// The ASIN "Amazon Standard Identification Number"
         /// </summary>
         public string ASIN { get; set; }
+
+        
 
         /// <summary>
         /// Refers to the vendor/seller/API used for that particular item that's needing review
@@ -91,6 +93,10 @@ namespace Blue_Ribbon.Models
         /// Yes is True
         /// </summary>
         public bool? RecToFriend { get; set; }
+
+        // map to customer model
+        public virtual Customer Customer { get; set; }
+        public virtual Deal Deal { get; set; }
 
         private BRContext db = new BRContext();
     }
